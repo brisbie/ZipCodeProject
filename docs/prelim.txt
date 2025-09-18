@@ -5,7 +5,7 @@ Preliminary Document – Zip Code Buffer Project
 Course: CSCI 331
 Project: Zip Code Record Processor
 Date: 9/17/25
-Team Members: Team 5
+Team 5
 
 ----------------------------------------------------
 1. Project Overview
@@ -20,9 +20,7 @@ containing U.S. zip code records using a buffer class. The program will:
 4. Determine the geographic extremes for each state
 5. Output a formatted table to standard output, preceded by a header row.
 
-The project also requires Doxygen documentation for all classes
-and methods, and testing with alternative CSV column sorting
-to ensure consistent results.
+We will also need to generate a doxygen file including all classes.
 
 ----------------------------------------------------
 2. Data Description
@@ -39,9 +37,9 @@ Latitude    | Decimal latitude                | 34.0901
 Longitude   | Decimal longitude               | -118.4065
 
 All fields will be stored as character arrays in ZipCodeRecord
-to match the old textbook style. Latitude and longitude may
-be stored as strings for buffer packing/unpacking, then converted
-to double for comparisons.
+to match the textbook style. Latitude and longitude may
+be stored as strings for buffer packing/unpacking, we can than 
+convert into doubles to compare.
 
 ----------------------------------------------------
 3. Classes and Data Structures
@@ -66,18 +64,15 @@ to double for comparisons.
 - DelimTextBuffer – holds delimiter-separated fields (from textbook)
 
 3.3 Containers
-- Use an array of ZipCodeRecords or a structure mapping state IDs
-  to extreme records.
-- Plan to use old-school C++ (arrays, loops) instead of STL
-  containers like vector or map.
+-We will use an array of structs to contain the data.
 
 ----------------------------------------------------
 4. Program Flow / Pseudocode
 ----------------------------------------------------
 
-1. Initialize DelimTextBuffer for reading CSV
+1. Initialize Buffer class for reading CSV
 2. Open CSV file
-3. Skip header row
+3. Read the header row
 4. While not end of file:
        a. Read line into buffer
        b. Unpack line into ZipCodeRecord
@@ -92,15 +87,15 @@ to double for comparisons.
 5. Testing Plan
 ----------------------------------------------------
 
-- Use the given CSV with a few known zip codes to verify
+- We will use the given CSV with a few known zip codes to verify
 - Check that printed table matches expected results.
 
 ----------------------------------------------------
 6. Tools and Environment
 ----------------------------------------------------
 
-- Buffer Utilities: fixtext.h/cpp, deltext.h/cpp (from textbook)
-- Documentation: Doxygen (PDF and/or HTML)
+- Buffer Utilities: fixtext.h/cpp, deltext.h/cpp
+- Documentation: Doxygen, prelim.txt
 
 ----------------------------------------------------
 7. Notes for Future Updates
@@ -111,3 +106,4 @@ to double for comparisons.
 - Add error handling for malformed CSV rows
 - Include Doxygen comments in all methods
 - Test with large datasets
+
