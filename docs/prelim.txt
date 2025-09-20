@@ -32,10 +32,10 @@ State       | 2-character state abbreviation  | CA
 Latitude    | Decimal latitude                | 34.0901
 Longitude   | Decimal longitude               | -118.4065
 
-All fields will be stored as character arrays in ZipCodeRecord
-to match the textbook style. Latitude and longitude may
-be stored as strings for buffer packing/unpacking, we can than 
-convert into doubles to compare.
+All fields will be stored as character arrays to 
+match the textbook style. Latitude and longitude may
+be stored as strings for buffer packing/unpacking, 
+we can than convert into doubles to compare.
 
 ----------------------------------------------------
 3. Classes and Data Structures
@@ -100,6 +100,7 @@ convert into doubles to compare.
 - Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
 
