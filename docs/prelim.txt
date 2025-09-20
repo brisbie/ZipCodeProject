@@ -14,7 +14,7 @@ Team 5
 The purpose of this project is to read and process a CSV file
 containing U.S. zip code records using a buffer class. The program will:
 
-1. Read the CSV file line by line using a DelimTextBuffer.
+1. Read the CSV file line by line using a Fixed length text buffer.
 2. Store each record in a ZipCodeRecord object.
 3. Group the records by state (using the 2-character state ID).
 4. Determine the geographic extremes for each state
@@ -55,13 +55,12 @@ convert into doubles to compare.
 - Methods:
     - Clear() – reset all fields
     - Pack(FixedTextBuffer &) / Unpack(FixedTextBuffer &)
-    - Pack(DelimTextBuffer &) / Unpack(DelimTextBuffer &)
-    - InitBuffer(FixedTextBuffer &) / InitBuffer(DelimTextBuffer &)
+    - InitBuffer(FixedTextBuffer &)
     - Print(ostream &)
 
 3.2 Buffer Classes
 - FixedTextBuffer – holds fixed-length fields (from textbook)
-- DelimTextBuffer – holds delimiter-separated fields (from textbook)
+
 
 3.3 Containers
 -We will use an array of structs to contain the data.
@@ -94,7 +93,7 @@ convert into doubles to compare.
 6. Tools and Environment
 ----------------------------------------------------
 
-- Buffer Utilities: fixtext.h/cpp, deltext.h/cpp
+- Buffer Utilities: fixtext.h/cpp
 - Documentation: Doxygen, prelim.txt
 
 ----------------------------------------------------
@@ -106,4 +105,5 @@ convert into doubles to compare.
 - Add error handling for malformed CSV rows
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
