@@ -96,10 +96,12 @@ we can than convert into doubles to compare.
 ----------------------------------------------------
 
 - Include main.cpp design
+- Include complier used
 - Decide on container type for state extremes
 - Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
 
