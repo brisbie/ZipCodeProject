@@ -1,7 +1,3 @@
-====================================================
-Preliminary Document – Zip Code Buffer Project
-====================================================
-
 Course: CSCI 331
 Project: Zip Code Record Processor
 Date: 9/17/25
@@ -16,8 +12,8 @@ containing U.S. zip code records using a buffer class. The program will:
 
 1. Read the CSV file line by line using a Fixed length text buffer.
 2. Store each record in a ZipCodeRecord object.
-3. Group the records by state (using the 2-character state ID).
-4. Determine the geographic extremes for each state
+3. Group the records by state.
+4. Determine the geographic extremes for each state.
 5. Output a formatted table to standard output, preceded by a header row.
 
 We will also need to generate a doxygen file including all classes.
@@ -61,7 +57,6 @@ convert into doubles to compare.
 3.2 Buffer Classes
 - FixedTextBuffer – holds fixed-length fields (from textbook)
 
-
 3.3 Containers
 -We will use an array of structs to contain the data.
 
@@ -102,8 +97,9 @@ convert into doubles to compare.
 
 - Include main.cpp design
 - Decide on container type for state extremes
-- Add error handling for malformed CSV rows
+- Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
