@@ -41,7 +41,8 @@ we can than convert into doubles to compare.
 3. Classes and Data Structures
 ----------------------------------------------------
 
-3.1 ZipCode
+3.1 ZipCode Class
+- zipcode.h/cpp
 - Fields:
     - char ZipCode[10]
     - char City[21]
@@ -54,8 +55,8 @@ we can than convert into doubles to compare.
     - InitBuffer(FixedTextBuffer &)
     - Print(ostream &)
 
-3.2 Buffer Classes
-- FixedTextBuffer – holds fixed-length fields (from textbook)
+3.2 Buffer Class
+- fixtext.h/cpp – holds fixed-length fields (from textbook)
 
 3.3 Containers
 -We will use an array of structs to contain the data.
@@ -102,6 +103,7 @@ we can than convert into doubles to compare.
 - Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
 
