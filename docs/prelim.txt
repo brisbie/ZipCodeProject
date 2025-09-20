@@ -41,7 +41,7 @@ we can than convert into doubles to compare.
 3. Classes and Data Structures
 ----------------------------------------------------
 
-3.1 ZipCodeRecord
+3.1 ZipCode
 - Fields:
     - char ZipCode[10]
     - char City[21]
@@ -100,6 +100,7 @@ we can than convert into doubles to compare.
 - Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
 
