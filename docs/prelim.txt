@@ -89,6 +89,7 @@ we can than convert into doubles to compare.
 ----------------------------------------------------
 
 - Buffer Utilities: fixtext.h/cpp
+- Complier : To be determined
 - Documentation: Doxygen, prelim.txt
 
 ----------------------------------------------------
@@ -101,6 +102,7 @@ we can than convert into doubles to compare.
 - Add error handling 
 - Include Doxygen comments in all methods
 - Test with large datasets
+
 
 
 
