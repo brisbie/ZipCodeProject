@@ -102,16 +102,13 @@ bool FixedTextBuffer::Read(const string& postalFile)
 
 		while (getline(ss, field, ',')) {
 			if (fieldIndex < MaxFields) {
-				// Store the field in the buffer (e.g., in `Buffer` or `FieldSize`)
-				// For simplicity, here we might use FieldSize, but it's up to your design
+				
 				FieldSize[fieldIndex] = field.length();
 				fieldIndex++;
 			}
 		}
 
-		// Now you've read a full row, process the fields further if needed
 		return TRUE;
 	}
 	return FALSE;
 }
-
