@@ -1,6 +1,4 @@
-"Zip
-Code","Place
-Name",State,County,Lat,Long
+"ZipCode","PlaceName",State,County,Lat,Long
 501,Holtsville,NY,Suffolk,40.8154,-73.0451
 544,Holtsville,NY,Suffolk,40.8154,-73.0451
 1001,Agawam,MA,Hampden,42.0702,-72.6227
@@ -40934,3 +40932,4 @@ Name",State,County,Lat,Long
 99928,Ward Cove,AK,Ketchikan Gateway,55.3954,-131.6754
 99929,Wrangell,AK,Wrangell-Petersburg (C,56.4335,-132.3529
 99950,Ketchikan,AK,Ketchikan Gateway,55.3422,-131.6478
+
