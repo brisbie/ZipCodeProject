@@ -8,11 +8,12 @@ class Zipcode
 {
   public:
 	// fields
-	  char ZipCode[10];
-	  char City[21];
-	  char State[3];
-	  char Latitude[11];
-	  char Longitude[11];
+	char ZipCode[10];
+	char City[21];
+	char State[3];
+	char County[21];
+	char Latitude[11];
+	char Longitude[11];
 	//methods
 	Zipcode ();
 	void Clear ();
