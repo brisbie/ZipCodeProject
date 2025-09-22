@@ -22,7 +22,7 @@ struct StateRecord {
 int main() {
     map<string, StateRecord> all_states;
     ZipCodeRecordBuffer buffer;
-    ifstream file("data/us_postal_codes.csv");
+    ifstream file("../data/us_postal_codes.csv");
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
@@ -69,7 +69,7 @@ int main() {
             record.southernmost_zip = zip;
         }
     }
-    
+    file.close();
 
     // Print header
     cout << left << setw(8) << "State" 
