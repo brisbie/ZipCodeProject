@@ -1,4 +1,5 @@
 #include <map>
+#include <iomanip>
 #include <string>
 #include "ZipCodeRecordBuffer.h"
 #include <iostream>
@@ -21,7 +22,7 @@ struct StateRecord {
 int main() {
     map<string, StateRecord> all_states;
     ZipCodeRecordBuffer buffer;
-    ifstream file("zip_code_database.csv");
+    ifstream file("data/us_postal_codes.csv");
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
@@ -69,7 +70,27 @@ int main() {
         }
     }
     
-    // ... code to print the table goes here ...
-    
+
+    // Print header
+    cout << left << setw(8) << "State" 
+        << setw(15) << "Easternmost" 
+        << setw(15) << "Westernmost" 
+        << setw(15) << "Northernmost" 
+        << setw(15) << "Southernmost" 
+        << "\n";
+
+    cout << string(68, '-') << "\n"; // separator line
+
+    // Print each state's extremes alphabetically
+    for (const auto& pair : all_states) {
+        const auto& record = pair.second;
+        cout << left << setw(8) << pair.first
+            << setw(15) << record.easternmost_zip
+            << setw(15) << record.westernmost_zip
+            << setw(15) << record.northernmost_zip
+            << setw(15) << record.southernmost_zip
+            << "\n";
+    }
+
     return 0;
 }
