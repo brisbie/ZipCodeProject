@@ -51,7 +51,7 @@ struct StateRecord {
 int main() {
     map<string, StateRecord> all_states; /**< [OUT] Map storing extreme ZIP codes for each state. */
     ZipCodeRecordBuffer buffer;
-    ifstream file("zip_code_database.csv"); /**< [IN] CSV input file. */
+    ifstream file("../data/us_postal_codes.csv"); /**< [IN] CSV input file. */
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
