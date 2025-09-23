@@ -11,6 +11,7 @@
  * @remark  The program currently does not print the table; printing logic should be added after processing.
  */
 #include <map>
+#include <iomanip>
 #include <string>
 #include "ZipCodeRecordBuffer.h"
 #include <iostream>
@@ -51,7 +52,7 @@ struct StateRecord {
 int main() {
     map<string, StateRecord> all_states; /**< [OUT] Map storing extreme ZIP codes for each state. */
     ZipCodeRecordBuffer buffer;
-    ifstream file("../data/us_postal_codes.csv"); /**< [IN] CSV input file. */
+    ifstream file("zip_code_database.csv");
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
@@ -99,8 +100,7 @@ int main() {
         }
     }
     
-    // @todo Print the table header and state extremes here
-    // @note Printing logic not yet implemented.
+    // ... code to print the table goes here ...
     
     return 0;
 }
