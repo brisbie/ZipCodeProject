@@ -1,67 +1,0 @@
-Script started on 2025-09-22 15:12:21-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="203" LINES="11"]
-[1m[7m%[27m[1m[0m                                                                                                                                                                                                           ]2;ebrisbin@8CG6243SRN:~/Documents/College/F25/CSCI 331/ZipCodeProject]1;..ipCodeProject]7;file://8CG6243SRN.campus.stcloudstate.edu/home/ebrisbin/Documents/College/F25/CSCI%20331/ZipCodeProject\[0m[27m[24m[J[01;32m➜  [36mZipCodeProject[00m [K[?1h=[?2004h[0m[27m[24m[J[01;32m➜  [36mZipCodeProject[00m [01;34mgit:([31mmain[34m) [33m✗[00m [Kscript assign.txt[17Dclear            [12Dgit push origin main[16Dcommit -m"Added table printing"[31Dadd .                          [26D[9Dclear    ./zipcode
-[K[A[40C[9Dg++ -std=c++11 -Iinclude -o zipcode main.cpp[1B[K[A[75C[?1l>[?2004l[1B
-]2;g++ -std=c++11 -Iinclude -o zipcode main.cpp]1;g++[1m[7m%[27m[1m[0m                                                                                                                                                                                                           ]2;ebrisbin@8CG6243SRN:~/Documents/College/F25/CSCI 331/ZipCodeProject]1;..ipCodeProject]7;file://8CG6243SRN.campus.stcloudstate.edu/home/ebrisbin/Documents/College/F25/CSCI%20331/ZipCodeProject\[0m[27m[24m[J[01;32m➜  [36mZipCodeProject[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004hg++ -std=c++11 -Iinclude -o zipcode main.cpp
-[K[A[75C[44Dscript assign.txt                           [1B[K[A[48C[17Dclear            [12Dgit push origin main[16Dcommit -m"Added table printing"[31Dadd .                          [26D[9Dclear    ./zipcode[1B[K[A[40C[1B[K[A[40C[?1l>[?2004l[1B
-]2;./zipcode]1;./zipcodeState   Easternmost    Westernmost    Northernmost   Southernmost   
---------------------------------------------------------------------
-AA      34034          34034          34034          34034          
-AK      99923          99546          99723          99546          
-AL      36856          36584          35739          36547          
-AP      96507          96373          96507          96373          
-AR      72310          72747          72733          71749          
-AZ      86508          85349          86021          85620          
-CA      92267          95536          95567          92173          
-CO      81047          81411          81653          81138          
-CT      6243           6831           6079           6836           
-DC      20019          20016          20012          20375          
-DE      19944          19716          19810          19975          
-FL      33480          32568          32452          33040          
-FM      96941          96941          96941          96941          
-GA      31328          30752          30751          31562          
-HI      96898          96769          96722          96772          
-IA      52734          51001          52160          52632          
-ID      83238          83844          83826          83237          
-IL      60438          62379          60075          62914          
-IN      47003          47631          46530          47635          
-KS      66118          67836          66955          66778          
-KY      41568          42050          41074          42049          
-LA      70081          71007          71075          70081          
-MA      2643           1258           1913           2564           
-MD      21842          21531          21088          21866          
-ME      4631           4261           4741           3904           
-MH      96960          96970          96970          96960          
-MI      48061          49938          49918          49232          
-MN      55605          56740          56711          55931          
-MO      63881          64496          63535          63829          
-MP      96950          96951          96951          96952          
-MS      38847          39121          38671          39558          
-MT      59319          59844          59484          59739          
-NC      27982          28903          28631          28468          
-ND      58074          58621          58255          58043          
-NE      68431          69352          69365          68325          
-NH      3854           3466           3592           3062           
-NJ      7620           8070           7827           8212           
-NM      88135          88056          87418          88063          
-NV      89034          89402          89404          89029          
-NY      11954          14736          12979          10307          
-OH      44438          45003          44030          45680          
-OK      74901          73946          74072          74747          
-OR      97842          97465          97121          97635          
-PA      18336          16155          16428          19351          
-PW      96940          96940          96940          96940          
-RI      2837           2891           2824           2807           
-SC      29566          29658          29356          29915          
-SD      57068          57724          57645          57049          
-TN      37680          38109          37119          37396          
-TX      75932          79821          79051          78522          
-UT      84534          84083          84331          84784          
-VA      23336          24248          22625          24580          
-VT      5902           5734           5902           5352           
-WA      99402          98350          98231          98671          
-WI      54246          54082          54850          53102          
-WV      25425          25555          26050          24884          
-WY      82082          83120          82423          82321          
-[1m[7m%[27m[1m[0m                                                                                                                                                                                                           ]2;ebrisbin@8CG6243SRN:~/Documents/College/F25/CSCI 331/ZipCodeProject]1;..ipCodeProject]7;file://8CG6243SRN.campus.stcloudstate.edu/home/ebrisbin/Documents/College/F25/CSCI%20331/ZipCodeProject\[0m[27m[24m[J[01;32m➜  [36mZipCodeProject[00m [01;34mgit:([31mmain[34m) [33m✗[00m [K[?1h=[?2004heexit[?1l>[?2004l
-]2;exit]1;exit
-Script done on 2025-09-22 15:12:36-05:00 [COMMAND_EXIT_CODE="0"]
