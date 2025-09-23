@@ -1,0 +1,169 @@
+CSCI 331 – ZIP Code Geographic Extremes
+Authors: Evan Brisbin, Jason Donkor, Ethan Fischer, Tim Stevens, Markose Mesay
+Date: September 23, 2025
+
+Reasons for changing our project:
+
+Our original implemntation was built off of how the textbook implemnted fixed length buffer for the person class.  
+The new implemntation using ZipCodeRecordBuffer.h simplifies the process by storing each field into a string array
+and provides mutator methods that convert the coordinates to doubles on demand.  This new approach reduces errors, 
+as well as makes the main program more readable and easier to maintain, while still preserving the fixed length 
+behavior.  
+
+----------------------------------------------------
+1. Project Overview
+----------------------------------------------------
+
+The purpose of this project is to read and process a CSV file
+containing U.S. zip code records using a buffer class. The program will:
+
+1. Read the CSV file line by line using a fixed length text buffer.
+2. Store each record.
+3. Group the records by state.
+4. Determine the geographic extremes for each state.
+5. Output a formatted table to standard output, preceded by a header row.
+
+We will also need to generate a doxygen file including all classes.
+
+
+
+----------------------------------------------------
+2. Data Description
+----------------------------------------------------
+
+Our program uses a CSV file (us_postal_codes.csv) located in the data/ directory. 
+The file contains fields for:
+- ZIP code
+- City/Place name
+- State abbreviation
+- County
+- Latitude
+- Longitude
+
+----------------------------------------------------
+3. Classes
+----------------------------------------------------
+
+3.1 ZipCodeRecordBuffer.h/cpp
+
+- Fields:
+
+    - string m_fields[6]:
+        * A fixed-size array storing the current CSV record fields:
+
+    Constants for field lengths:
+    - ZIP_CODE_LENGTH = 5
+    - PLACE_NAME_LENGTH = 50
+    - STATE_LENGTH = 2
+    - COUNTY_LENGTH = 50
+    - LAT_LONG_LENGTH = 10
+
+- Methods:
+
+    - ZipCodeRecordBuffer():
+        * Default constructor, initializes all fields to empty strings.
+
+    - bool ReadRecord(ifstream &file):
+        * Reads a single CSV line from the given file stream.
+
+    - Splits the line into fields and stores them in m_fields, truncating fields if necessary.
+        * Returns true if a record was read successfully, false if EOF is reached.
+
+    - string getZipCode() const:
+        * Returns the ZIP code field.
+
+    - string getPlaceName() const:
+        * Returns the city/place name field.
+    
+    - string getState() const:
+        * Returns the 2-character state abbreviation.
+
+    - string getCounty() const:
+        * Returns the county field.
+
+    - double getLatitude() const:
+        * Converts the latitude field to double and returns it.
+
+    - double getLongitude() const:
+        * Converts the longitude field to double and returns it.
+
+3.2 main.cpp
+- Fields:
+    - map<string, StateRecord> all_states: 
+        * stores the geographic extremes for each state.
+
+    - StateRecord struct: 
+        * holds the easternmost, westernmost, northernmost, and southernmost ZIP codes and their coordinates.
+
+    - ZipCodeRecordBuffer buffer:
+        * reads one CSV record at a time and provides access to its fields.
+
+- Methods: 
+    - main() 
+        * Entry point of the program.
+        * Opens data/us_postal_codes.csv.
+        * Reads each ZIP code record using ZipCodeRecordBuffer.
+        * Updates the StateRecord for each state with the extreme coordinates.
+        * Prints a formatted table of the results showing the easternmost, westernmost, northernmost, and southernmost ZIP codes for each state.
+
+----------------------------------------------------
+4. Program Flow (main.cpp)
+----------------------------------------------------
+
+1. Open the CSV file data/us_postal_codes.csv.
+2. Skip the header row.
+3. Loop through each record using ZipCodeRecordBuffer::ReadRecord().
+4. For each record:
+    - Convert latitude and longitude to double.
+    - Update the corresponding StateRecord in the map if the record represents a new extreme.
+5. After all records are processed, print a formatted table:
+    - Columns: State | Easternmost | Westernmost | Northernmost | Southernmost
+    - One row per state, sorted alphabetically by state abbreviation
+
+----------------------------------------------------
+5. Testing Plan
+----------------------------------------------------
+
+- We will use the given CSV with a few known zip codes to verify
+- Check that printed table matches expected results.
+
+----------------------------------------------------
+6. Tools and Environment
+----------------------------------------------------
+
+- Buffer Utilities: ZipCodeRecordBuffer.h
+- Complier : gcc 14.3.1
+- Documentation: Doxygen, prelim.txt, final-prelim.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
