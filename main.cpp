@@ -7,7 +7,7 @@
  * @details
  *  - Opens a ZIP code CSV file and reads each record using ZipCodeRecordBuffer.
  *  - Groups records by state and updates easternmost, westernmost, northernmost, and southernmost ZIP codes.
- *  - Prints a formatted table of results (TODO).
+ *  - Prints a formatted table of results.
  * @remark  The program currently does not print the table; printing logic should be added after processing.
  */
 #include <map>
