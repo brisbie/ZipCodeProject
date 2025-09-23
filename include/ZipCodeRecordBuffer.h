@@ -1,3 +1,21 @@
+/**
+ * @file    ZipCodeRecordBuffer.h
+ * @authors  Evan Brisbin, Jason Donkor, Ethan Fischer, Tim Stevens, Markose Mesay
+ * @date    2025-09-22
+ * @version 1.0
+ * @brief   Declaration of the ZipCodeRecordBuffer class for reading ZIP code CSV records.
+ * @details
+ *  Provides functionality to read, store, and access U.S. ZIP code records
+ *  from a CSV file. Each record includes:
+ *   - ZIP code
+ *   - City
+ *   - State abbreviation
+ *   - County
+ *   - Latitude and Longitude
+ *  Fields are stored in fixed-length strings with truncation applied
+ *  if values exceed their maximum allowed length.
+ */
+
 #ifndef ZipCodeRecordBuffer_H
 #define ZipCodeRecordBuffer_H
 
@@ -10,22 +28,38 @@
 
 using namespace std;
 
-// Define a maximum length for each field based on your specifications
-const int ZIP_CODE_LENGTH = 5;
-const int PLACE_NAME_LENGTH = 50;
-const int STATE_LENGTH = 2;
-const int COUNTY_LENGTH = 50;
-const int LAT_LONG_LENGTH = 10; // e.g., "-123.4567"
+/// @brief Maximum length for each field
+const int ZIP_CODE_LENGTH = 5; /**< Maximum ZIP code length. */
+const int PLACE_NAME_LENGTH = 50; /**< Maximum city/place name length. */
+const int STATE_LENGTH = 2; /**< Maximum state abbreviation length. */
+const int COUNTY_LENGTH = 50; /**< Maximum county name length. */
+const int LAT_LONG_LENGTH = 10; /**< Maximum latitude/longitude length. */
 
+/**
+ * @class ZipCodeRecordBuffer
+ * @brief Buffer class for reading and storing ZIP code records from a CSV file.
+ * @pre A properly formatted CSV file must be opened before calling ReadRecord().
+ * @post After a successful call to ReadRecord(), internal fields contain the parsed data.
+ * @remark Truncates fields longer than their maximum allowed size.
+ * @see    getLatitude(), getLongitude()
+ */
 class ZipCodeRecordBuffer {
 public:
+    /**
+     * @brief Default constructor.
+     * Initializes all fields to empty strings.
+     */
     ZipCodeRecordBuffer() {
         // Initialize all fields to empty strings
         for (int i = 0; i < 5; ++i) {
             m_fields[i] = "";
         }
     }
-
+    /**
+     * @brief Reads a single record from a CSV file.
+     * @param file Input file stream containing CSV data.
+     * @return True if a record was successfully read, false if EOF is reached.
+     */
     bool ReadRecord(ifstream& file) {
         string line;
         if (!getline(file, line)) {
@@ -60,21 +94,48 @@ public:
     }
 
     // Accessor methods to retrieve data, converting from string to the correct type
+    /**
+     * @brief Get the ZIP code field.
+     * @return The ZIP code as a string.
+     */
     string getZipCode() const { return m_fields[0]; }
+    
+    /**
+     * @brief Get the place name field.
+     * @return The place name as a string.
+     */
     string getPlaceName() const { return m_fields[1]; }
+
+    /**
+     * @brief Get the state abbreviation field.
+     * @return The 2-character state abbreviation.
+     */
     string getState() const { return m_fields[2]; }
+
+    /**
+     * @brief Get the county field.
+     * @return The county name as a string.
+     */
     string getCounty() const { return m_fields[3]; }
 
+    /**
+     * @brief Get the latitude field.
+     * @return The latitude as a double.
+     */
     double getLatitude() const {
         return atof(m_fields[4].c_str());
     }
 
+    /**
+     * @brief Get the longitude field.
+     * @return The longitude as a double.
+     */
     double getLongitude() const {
         return atof(m_fields[5].c_str());
     }
 
 private:
-    string m_fields[6]; // A fixed-size array to hold the 6 fields
+    string m_fields[6]; ///< A fixed-sized array of 6 fields: {Zip, Place, State, County, Lat, Long}.
 };
 
 #endif // FIXED_ZIP_CODE_RECORD_BUFFER_H

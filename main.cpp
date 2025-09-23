@@ -1,3 +1,15 @@
+/**
+ * @file    main.cpp
+ * @authors Evan Brisbin, Jason Donkor, Ethan Fischer, Tim Stevens, Markose Mesay
+ * @date    2025-09-22
+ * @version 1.0
+ * @brief   Main program to read ZIP code CSV and calculate geographic extremes per state.
+ * @details
+ *  - Opens a ZIP code CSV file and reads each record using ZipCodeRecordBuffer.
+ *  - Groups records by state and updates easternmost, westernmost, northernmost, and southernmost ZIP codes.
+ *  - Prints a formatted table of results (TODO).
+ * @remark  The program currently does not print the table; printing logic should be added after processing.
+ */
 #include <map>
 #include <string>
 #include "ZipCodeRecordBuffer.h"
@@ -6,22 +18,40 @@
 
 using namespace std;
 
-// A struct to hold the four extreme zip codes AND their coordinates.
+/**
+ * @struct StateRecord
+ * @brief Holds the four extreme ZIP codes AND their coordinates.
+ * @details
+ *  - Tracks easternmost, westernmost, northernmost, and southernmost ZIP codes.
+ *  - Initialized with extreme numeric values to ensure first record is correctly stored.
+ */
 struct StateRecord {
-    string easternmost_zip;
-    double easternmost_lon = -numeric_limits<double>::max(); // Initialize with a very small number
-    string westernmost_zip;
-    double westernmost_lon = numeric_limits<double>::max();  // Initialize with a very large number
-    string northernmost_zip;
-    double northernmost_lat = -numeric_limits<double>::max();
-    string southernmost_zip;
-    double southernmost_lat = numeric_limits<double>::max();
+    string easternmost_zip; /**< ZIP code with largest longitude. */
+    double easternmost_lon = -numeric_limits<double>::max(); /**< Longitude of easternmost ZIP */
+    string westernmost_zip; /**< ZIP code with smallest longitude. */
+    double westernmost_lon = numeric_limits<double>::max();  /**< Longitude of westernmost ZIP */
+    string northernmost_zip; /**< ZIP code with largest latitude. */
+    double northernmost_lat = -numeric_limits<double>::max(); /**< Latitude of northernmost ZIP. */
+    string southernmost_zip; /**< ZIP code with smallest latitude. */
+    double southernmost_lat = numeric_limits<double>::max(); /**< Latitude of southernmost ZIP. */
 };
 
+/**
+ * @brief Main program entry point.
+ * @details
+ *  - Reads the ZIP code CSV.
+ *  - Updates StateRecord map with geographic extremes.
+ *  - Prints results table.
+ * @pre "us_postal_codes.csv" must exist and be accessible.
+ * @post Map `all_states` contains geographic extremes for all states found in the CSV.
+ * @return 0 if program succeeds, 1 if file cannot be opened.
+ * @callgraph
+ * @callergraph
+ */
 int main() {
-    map<string, StateRecord> all_states;
+    map<string, StateRecord> all_states; /**< [OUT] Map storing extreme ZIP codes for each state. */
     ZipCodeRecordBuffer buffer;
-    ifstream file("zip_code_database.csv");
+    ifstream file("zip_code_database.csv"); /**< [IN] CSV input file. */
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
@@ -29,9 +59,9 @@ int main() {
     }
 
     string header;
-    getline(file, header);
+    getline(file, header); /**< Skip header line. */
 
-    while (buffer.ReadRecord(file)) {
+    while (buffer.ReadRecord(file)) { /**< [IN, OUT] Reads record and updates buffer fields. */
         string state = buffer.getState();
         string zip = buffer.getZipCode();
         double latitude = buffer.getLatitude();
@@ -69,7 +99,8 @@ int main() {
         }
     }
     
-    // ... code to print the table goes here ...
+    // @todo Print the table header and state extremes here
+    // @note Printing logic not yet implemented.
     
     return 0;
 }
