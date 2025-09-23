@@ -52,7 +52,7 @@ struct StateRecord {
 int main() {
     map<string, StateRecord> all_states; /**< [OUT] Map storing extreme ZIP codes for each state. */
     ZipCodeRecordBuffer buffer;
-    ifstream file("zip_code_database.csv");
+    ifstream file("data/us_postal_codes.csv");
 
     if (!file.is_open()) {
         cerr << "Error opening file." << endl;
@@ -100,7 +100,32 @@ int main() {
         }
     }
     
-    // ... code to print the table goes here ...
+    file.close();
+
+    /** @brief Print table header for state extremes. */
+    cout << left << setw(8) << "State" 
+        << setw(15) << "Easternmost" 
+        << setw(15) << "Westernmost" 
+        << setw(15) << "Northernmost" 
+        << setw(15) << "Southernmost" 
+        << "\n";
+
+    cout << string(68, '-') << "\n"; /**< Separator line. */
+
+    /**
+     * @brief Print each state's geographic extremes.
+     * @details Loops through `all_states` and prints ZIP codes in aligned columns.
+     * @note States are printed in alphabetical order.
+     */
+    for (const auto& pair : all_states) {
+        const auto& record = pair.second; /**< Reference to current state record. */
+        cout << left << setw(8) << pair.first
+            << setw(15) << record.easternmost_zip
+            << setw(15) << record.westernmost_zip
+            << setw(15) << record.northernmost_zip
+            << setw(15) << record.southernmost_zip
+            << "\n";
+    }
     
     return 0;
 }
