@@ -4,7 +4,7 @@ Date: September 23, 2025
 
 Reasons for changing our project:
 
-Our original implemntation was built off of how the textbook implemnted fixed length buffer for the person class.  
+Our original implementation was built off of how the textbook implemented fixed length buffer for the person class.  
 The new implemntation using ZipCodeRecordBuffer.h simplifies the process by storing each field into a string array
 and provides mutator methods that convert the coordinates to doubles on demand.  This new approach reduces errors, 
 as well as makes the main program more readable and easier to maintain, while still preserving the fixed length 
@@ -48,7 +48,7 @@ The file contains fields for:
 
 - Fields:
 
-    - string m_fields[6]:
+    - string m_fields[6]
         * A fixed-size array storing the current CSV record fields:
 
     Constants for field lengths:
@@ -65,8 +65,7 @@ The file contains fields for:
 
     - bool ReadRecord(ifstream &file):
         * Reads a single CSV line from the given file stream.
-
-    - Splits the line into fields and stores them in m_fields, truncating fields if necessary.
+        * Splits the line into fields and stores them in m_fields, truncating fields if necessary.
         * Returns true if a record was read successfully, false if EOF is reached.
 
     - string getZipCode() const:
@@ -132,7 +131,7 @@ The file contains fields for:
 ----------------------------------------------------
 
 - Buffer Utilities: ZipCodeRecordBuffer.h
-- Complier : gcc 14.3.1
+- Compiler : gcc 14.3.1
 - Documentation: Doxygen, prelim.txt, final-prelim.txt
 
 
